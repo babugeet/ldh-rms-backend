@@ -12,6 +12,6 @@ func main() {
 
 	fmt.Println("Started Table Management Microservice")
 	router := mux.NewRouter()
-	router.HandleFunc("/books", handlers.GetTables).Methods(http.MethodGet)
-
+	router.HandleFunc("/tables", handlers.GetTables).Methods(http.MethodGet)
+	http.ListenAndServe(":4000", router)
 }
